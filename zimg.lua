@@ -72,7 +72,7 @@ disable_type    = 0
 script_name     = pwd .. '/script/process.lua'
 --format value: 'none' for original or other format names
 --默认保存新图的格式，字符串'none'表示以原有格式保存，或者是期望使用的格式名
-format          = 'jpeg'
+format          = 'none'
 --quality value: 1~100(default: 75)
 --默认保存新图的质量
 quality         = 75
@@ -103,4 +103,18 @@ beansdb_port    = 7900
 --SSDB服务器IP
 ssdb_ip         = '127.0.0.1'
 --SSDB服务器端口
-ssdb_port       = 8888
+ssdb_port       = 6379
+
+--lua conf functions
+--部分与配置有关的函数在lua中实现，对性能影响不大
+function is_img(type_name)
+    local found = -1
+    for _, allowed in pairs(allowed_type) do
+        if string.lower(type_name) == allowed then
+            found = 1
+            break
+        end
+    end
+    return found
+end
+

@@ -5,8 +5,9 @@ ENV REFRESHED_AT 2016-4-22-11-07
 #
 RUN apt-get update && apt-get install -y wget git g++ openssl cmake \
             libevent-dev libjpeg-dev libgif-dev libpng-dev libwebp-dev \
-            libmagickcore5 libmagickwand5 libmemcached-dev libmagickwand-dev \
-            && cmake -D CMAKE_CXX_COMPILER="g++" \
+            libmagickcore5 libmagickwand5 libmemcached-dev libmagickwand-dev
+            
+RUN cmake -D CMAKE_CXX_COMPILER="g++" \
             CMAKE -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX:PATH="/usr/local"
 
 #

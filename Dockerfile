@@ -64,7 +64,7 @@ RUN git clone https://github.com/buaazp/zimg -b master --depth=1 \
 WORKDIR /zimg/bin
 ADD zimg.lua /zimg/bin/
 #
-CMD ["zimg", "zimg.lua"]
+CMD ["./zimg", "zimg.lua"]
 #
 #
 #

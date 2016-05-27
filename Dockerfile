@@ -4,7 +4,7 @@ ENV REFRESHED_AT 2016-4-22-11-07
 RUN apt-get update
 
 #
-RUN apt-get install -y openssl cmake libevent-dev libjpeg-dev libgif-dev libpng-dev libwebp-dev libmagickcore5 libmagickwand5 libmemcached-dev
+RUN apt-get update && apt-get install -y openssl cmake libevent-dev libjpeg-dev libgif-dev libpng-dev libwebp-dev libmagickcore5 libmagickwand5 libmemcached-dev
 
 #
 RUN wget http://www.openssl.org/source/openssl-1.0.1i.tar.gz \
